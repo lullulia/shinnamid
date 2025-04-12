@@ -1,0 +1,101 @@
+/* Reset 기본 스타일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 전체 배경과 기본 폰트 */
+body {
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+  background: linear-gradient(135deg, #e8f0fe, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #333;
+}
+
+/* 타이틀 */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1a73e8;
+}
+
+/* 카드형 검색 박스 */
+.search-container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 입력 그룹 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* 라벨 */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+}
+
+/* 텍스트 입력 */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+/* 버튼 */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1558b0;
+}
+
+/* 결과 박스 */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border-radius: 10px;
+  border-left: 5px solid #1a73e8;
+  font-size: 14.5px;
+  line-height: 1.6;
+  display: none;
+}
+
+.result strong {
+  color: #333;
+}
