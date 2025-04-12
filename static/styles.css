@@ -8,32 +8,52 @@
 /* 전체 배경과 기본 폰트 */
 body {
   font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
-  background: linear-gradient(135deg, #e8f0fe, #ffffff);
+  background: linear-gradient(135deg, #ffe6f0, #fff5f9);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  color: #333;
+  color: #4b2c2c;
+  position: relative;
+}
+
+/* 헬로키티 이미지 */
+body::before {
+  content: "";
+  background-image: url('https://i.namu.wiki/i/-xb3vfpZZ3bbnvPFFgJ0rBSCyyYi0VbXZGZCRvfNCWjXfMT90aafo-2ag-ejWt889rrHV-frxd1PU9yU7g34tA.webp');
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  z-index: 0;
 }
 
 /* 타이틀 */
 h1 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #1a73e8;
+  color: #d63384;
+  position: relative;
+  z-index: 1;
 }
 
 /* 카드형 검색 박스 */
 .search-container {
   background: #ffffff;
   padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 420px;
-  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
 /* 입력 그룹 */
@@ -47,21 +67,21 @@ label {
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 15px;
-  color: #555;
+  color: #b2005c;
 }
 
 /* 텍스트 입력 */
 input[type="text"] {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
+  border: 1px solid #f5c1d1;
+  border-radius: 10px;
   font-size: 14px;
   transition: border-color 0.2s;
 }
 
 input[type="text"]:focus {
-  border-color: #1a73e8;
+  border-color: #ff69b4;
   outline: none;
 }
 
@@ -69,10 +89,10 @@ input[type="text"]:focus {
 button {
   width: 100%;
   padding: 14px;
-  background-color: #1a73e8;
+  background-color: #ff69b4;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -81,21 +101,39 @@ button {
 }
 
 button:hover {
-  background-color: #1558b0;
+  background-color: #e0559e;
 }
 
 /* 결과 박스 */
 .result {
   margin-top: 30px;
-  padding: 20px;
-  background-color: #f1f8ff;
-  border-radius: 10px;
-  border-left: 5px solid #1a73e8;
-  font-size: 14.5px;
-  line-height: 1.6;
+  padding: 25px;
+  background-color: #ffe0ec;
+  border-radius: 24px; /* 훨씬 더 둥글게 */
+  border-left: 6px solid #ff69b4;
+  font-size: 15px;
+  line-height: 1.7;
   display: none;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* 결과 텍스트 꾸미기 */
+.result h2 {
+  color: #cc2e72;
+  margin-bottom: 15px;
+  border-radius: 24px; /* 훨씬 더 둥글게 */
+  font-size: 18px;
+  box-shadow: 1 8px 32px rgba(0, 0, 0, 0.08);
+
+}
+
+.result p {
+  margin: 6px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .result strong {
-  color: #333;
+  color: #8b004b;
 }

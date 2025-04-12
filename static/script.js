@@ -1,29 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const searchForm = document.getElementById("searchForm");
-  const resultId = document.getElementById("resultId");
-  const resultPw = document.getElementById("resultPw");
+const studentData = [
+  { studentId: "202300",name: "홍길동", googleId: "chulsoo.kim@g.school.com",password: "pass1234"},
+  {
+    studentId: "202301",
+    name: "김철수",
+    googleId: "chulsoo.kim@g.school.com",
+    password: "pass1234"
+  },
+  {
+    studentId: "202302",
+    name: "이영희",
+    googleId: "younghee.lee@g.school.com",
+    password: "secure5678"
+  },
+  {
+    studentId: "202303",
+    name: "박민수",
+    googleId: "minsoo.park@g.school.com",
+    password: "pw2023!"
+  }
+];
 
-  // 예시용 데이터베이스 (실제로는 서버에서 받아와야 함)
-  const userData = [
-    { id: "202301", name: "홍길동", email: "202301@school.edu", password: "gildong123" },
-    { id: "202302", name: "김민수", email: "202302@school.edu", password: "minsu456" },
-    { id: "202303", name: "이영희", email: "202303@school.edu", password: "younghee789" }
-  ];
+// 폼 제출 시 검색 기능
+document.getElementById("searchForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // 폼 기본 동작 방지
 
-  searchForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // 폼 제출 시 페이지 리로드 방지
+  const inputId = document.getElementById("studentId").value.trim();
+  const inputName = document.getElementById("studentName").value.trim();
 
-    const inputId = document.getElementById("studentId").value.trim();
-    const inputName = document.getElementById("studentName").value.trim();
+  const result = studentData.find(
+    (student) => student.studentId === inputId && student.name === inputName
+  );
 
-    const user = userData.find(u => u.id === inputId && u.name === inputName);
+  const googleIdField = document.getElementById("googleId");
+  const googlePwField = document.getElementById("googlePw");
 
-    if (user) {
-      resultId.textContent = user.email;
-      resultPw.textContent = user.password;
-    } else {
-      resultId.textContent = "일치하는 계정이 없습니다.";
-      resultPw.textContent = "-";
-    }
-  });
+  if (result) {
+    googleIdField.textContent = result.googleId;
+    googlePwField.textContent = result.password;
+  } else {
+    googleIdField.textContent = "정보 없음";
+    googlePwField.textContent = "정보 없음";
+  }
 });
